@@ -1,0 +1,268 @@
+:root{
+    --background-main-color:#010619;
+    --button-bg-color:#01FE7F;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+  }
+  
+
+  .backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  #SigninForm{
+      display: flex;
+      justify-content: center;
+  }
+
+  #User{
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+      width: 75%;
+      border-radius: 2.5rem;
+      background: linear-gradient(168deg, #010619, #377b59, #006934);
+      background-size: 600% 600%;
+      color: white;
+      align-items: center;
+      border-color: var(--button-bg-color);
+      animation: gradient 13s ease infinite, scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+  #User h1{
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 1rem;
+  }
+
+  #User label{
+      font-size: 1.2rem;
+      text-align: center;
+      padding-bottom: .3rem;
+      padding-top: .4rem;
+  }
+
+  #User input,
+  #User input:focus-visible,
+  #User input:-internal-autofill-selected
+  {
+      background-color: transparent !important;
+      color: white !important;
+      background-image: none !important;
+      appearance: none;
+      font-family: inherit;
+      border:none;
+      border-bottom: var(--button-bg-color) solid 3px;
+      outline: none;
+      font-size: 1rem;
+      width: 75%;
+      margin-bottom: .3rem;
+      animation: error .5s .3s ease-out 8 alternate forwards running;
+  }
+
+ .botones{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 75%;
+   padding-top:.3rem;
+  padding-bottom: .3rem;
+ }
+
+  #User button{
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      margin-bottom: .8rem;
+      background-color: var(--button-bg-color);
+      cursor: pointer;
+      border: none;
+      margin: .3rem;
+      border-radius: 8px;
+      width: 65%;
+      padding: .5rem;
+  }
+
+  #User button:hover{
+    background-color: var(--background-main-color);
+    color:white;
+}
+
+  .errors{
+      font-size:.8rem;
+      font-weight: 700;
+      text-align: center;
+      color:red;
+  }
+
+  .bounce {
+    animation-name: bounce;
+    animation-duration: .5s;
+    animation-delay: 0.25s;
+  }
+
+  @media (min-width:768px){
+    #User{
+      margin-top: 2.5rem;
+      width: 55%;
+      border-radius: 2rem;
+    }
+
+  #User h1{
+      font-size: 1.5rem;
+      margin: 1.2rem;
+  }
+
+  #User label{
+      font-size: 1rem;
+      margin-bottom: .6rem;
+      margin-top: .6rem;
+  }
+
+  #User input,
+  #User input:focus-visible,
+  #User input:-internal-autofill-selected
+  {
+      font-size: 1rem;
+      margin-bottom: .6rem;
+  }
+
+ .botones{
+   padding-top:.6rem;
+   padding-bottom: .6rem;
+ }
+
+  #User button{
+      font-size: 1rem;
+      padding:.2rem;
+      margin-bottom: .8rem;
+      margin: .3rem;
+      border-radius: 8px;
+      width: 45%;
+  }
+  
+  .errors{
+    font-size:.9rem;
+    margin:.6rem;
+}
+  }
+
+  @media (min-width: 1340px){
+  
+    #User{
+        margin-top: 2.5rem;
+        width: 25%;
+        border-radius: 0;
+      }
+  
+    #User h1{
+        font-size: 1.5rem;
+        margin: 1.2rem;
+    }
+  
+    #User label{
+        font-size: 1rem;
+        margin-bottom: .6rem;
+        margin-top: .6rem;
+    }
+  
+    #User input,
+    #User input:focus-visible,
+    #User input:-internal-autofill-selected
+    {
+        font-size: 1rem;
+        margin-bottom: .6rem;
+    }
+  
+   .botones{
+     padding-top:.6rem;
+     padding-bottom: .6rem;
+   }
+  
+    #User button{
+        font-size: 1rem;
+        padding:.2rem;
+        margin-bottom: .8rem;
+        margin: .3rem;
+        border-radius: 8px;
+        width: 45%;
+    }
+    
+    .errors{
+      font-size:.9rem;
+      margin:.6rem;
+  }
+    
+  }
+
+  @keyframes gradient {
+    0%{background-position:19% 0%}
+    50%{background-position:82% 100%}
+    100%{background-position:19% 0%}
+}
+
+@keyframes scale-in-ver-center {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+  
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+    37% {
+      transform: translateX(5px);
+      timing-function: ease-out;
+    }
+    55% {
+      transform: translateX(-5px);
+      timing-function: ease-in;
+    }
+    73% {
+      transform: translateX(4px);
+      timing-function: ease-out;
+    }
+    82% {
+      transform: translateX(-4px);
+      timing-function: ease-in;
+    }
+    91% {
+      transform: translateX(2px);
+      timing-function: ease-out;
+    }
+    96% {
+      transform: translateX(-2px);
+      timing-function: ease-in;
+    }
+    100% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+  }
+
